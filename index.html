@@ -5,209 +5,41 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 <title>Lauryn's HBCU Celebration — Prairie View A&M University</title>
 <style>
-  :root {
-    --purple: #4F2683;
-    --purple-dark: #2A1045;
-    --purple-mid: #3A1A60;
-    --gold: #C9A227;
-    --gold-light: #F0D060;
-    --white: #FFFFFF;
-    --off-white: #FAF5E4;
-  }
-
+  :root { --purple: #4F2683; --purple-dark: #2A1045; --purple-mid: #3A1A60; --gold: #C9A227; --gold-light: #F0D060; --white: #FFFFFF; }
   * { box-sizing: border-box; margin: 0; padding: 0; }
-
-  body {
-    font-family: 'Georgia', 'Times New Roman', serif;
-    background: var(--purple-dark);
-    color: var(--white);
-    min-height: 100vh;
-  }
-
-  /* ── Gold top bar ── */
+  body { font-family: 'Georgia', 'Times New Roman', serif; background: var(--purple-dark); color: var(--white); min-height: 100vh; }
   .top-bar { background: var(--gold); height: 8px; width: 100%; }
-
-  /* ── Hero ── */
-  .hero {
-    background: linear-gradient(160deg, var(--purple-dark) 0%, var(--purple) 60%, var(--purple-mid) 100%);
-    text-align: center;
-    padding: 3rem 1.5rem 2.5rem;
-    position: relative;
-    overflow: hidden;
-  }
-  .hero::before {
-    content: '';
-    position: absolute; inset: 0;
-    background: radial-gradient(ellipse at 70% 30%, rgba(201,162,39,0.12) 0%, transparent 60%);
-    pointer-events: none;
-  }
+  .hero { background: linear-gradient(160deg, var(--purple-dark) 0%, var(--purple) 60%, var(--purple-mid) 100%); text-align: center; padding: 3rem 1.5rem 2.5rem; position: relative; overflow: hidden; }
+  .hero::before { content: ''; position: absolute; inset: 0; background: radial-gradient(ellipse at 70% 30%, rgba(201,162,39,0.12) 0%, transparent 60%); pointer-events: none; }
   .hero-emoji { font-size: clamp(2.5rem, 6vw, 4rem); margin-bottom: 0.5rem; }
-  .hero h1 {
-    font-size: clamp(2rem, 6vw, 3.8rem);
-    color: var(--gold);
-    line-height: 1.1;
-    letter-spacing: -0.5px;
-    margin-bottom: 0.4rem;
-  }
-  .hero h2 {
-    font-size: clamp(1rem, 3vw, 1.5rem);
-    color: var(--white);
-    font-weight: normal;
-    font-style: italic;
-    margin-bottom: 0.6rem;
-  }
-  .hero .school {
-    font-size: clamp(0.85rem, 2vw, 1.1rem);
-    color: var(--gold-light);
-    letter-spacing: 1px;
-    text-transform: uppercase;
-  }
-  .hero .date {
-    margin-top: 0.8rem;
-    font-size: clamp(0.8rem, 2vw, 1rem);
-    color: rgba(255,255,255,0.7);
-  }
-
-  /* ── Gold divider ── */
-  .divider {
-    height: 4px;
-    background: linear-gradient(90deg, transparent, var(--gold), transparent);
-    margin: 0;
-  }
-
-  /* ── Intro ── */
-  .intro {
-    text-align: center;
-    padding: 2rem 1.5rem 1.5rem;
-    max-width: 640px;
-    margin: 0 auto;
-    font-size: clamp(0.9rem, 2.5vw, 1.05rem);
-    color: rgba(255,255,255,0.85);
-    line-height: 1.7;
-  }
+  .hero h1 { font-size: clamp(2rem, 6vw, 3.8rem); color: var(--gold); line-height: 1.1; letter-spacing: -0.5px; margin-bottom: 0.4rem; }
+  .hero h2 { font-size: clamp(1rem, 3vw, 1.5rem); color: var(--white); font-weight: normal; font-style: italic; margin-bottom: 0.6rem; }
+  .hero .school { font-size: clamp(0.85rem, 2vw, 1.1rem); color: var(--gold-light); letter-spacing: 1px; text-transform: uppercase; }
+  .hero .date { margin-top: 0.8rem; font-size: clamp(0.8rem, 2vw, 1rem); color: rgba(255,255,255,0.7); }
+  .divider { height: 4px; background: linear-gradient(90deg, transparent, var(--gold), transparent); }
+  .intro { text-align: center; padding: 2rem 1.5rem 1.5rem; max-width: 640px; margin: 0 auto; font-size: clamp(0.9rem, 2.5vw, 1.05rem); color: rgba(255,255,255,0.85); line-height: 1.7; }
   .intro strong { color: var(--gold); }
-
-  /* ── Cards grid ── */
-  .cards {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 1.5rem;
-    max-width: 900px;
-    margin: 0 auto 3rem;
-    padding: 0 1.5rem;
-  }
-
-  .card {
-    background: var(--purple-mid);
-    border: 2px solid var(--gold);
-    border-radius: 12px;
-    padding: 1.75rem 1.5rem 1.5rem;
-    display: flex;
-    flex-direction: column;
-    gap: 0.75rem;
-    transition: transform 0.2s, box-shadow 0.2s;
-  }
-  .card:hover {
-    transform: translateY(-3px);
-    box-shadow: 0 8px 32px rgba(201,162,39,0.18);
-  }
+  .cards { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.5rem; max-width: 900px; margin: 0 auto 3rem; padding: 0 1.5rem; }
+  .card { background: var(--purple-mid); border: 2px solid var(--gold); border-radius: 12px; padding: 1.75rem 1.5rem 1.5rem; display: flex; flex-direction: column; gap: 0.75rem; transition: transform 0.2s, box-shadow 0.2s; }
+  .card:hover { transform: translateY(-3px); box-shadow: 0 8px 32px rgba(201,162,39,0.18); }
   .card-icon { font-size: 2.2rem; }
-  .card-title {
-    font-size: 1.15rem;
-    color: var(--gold);
-    font-weight: bold;
-    line-height: 1.2;
-  }
-  .card-desc {
-    font-size: 0.88rem;
-    color: rgba(255,255,255,0.78);
-    line-height: 1.6;
-    flex: 1;
-  }
-  .card-meta {
-    font-size: 0.8rem;
-    color: var(--gold-light);
-    opacity: 0.8;
-  }
-
-  .btn {
-    display: inline-block;
-    margin-top: 0.5rem;
-    padding: 0.65rem 1.4rem;
-    background: var(--gold);
-    color: var(--purple-dark);
-    font-size: 0.92rem;
-    font-weight: bold;
-    font-family: inherit;
-    text-decoration: none;
-    border-radius: 6px;
-    text-align: center;
-    transition: background 0.15s, color 0.15s;
-    letter-spacing: 0.3px;
-  }
-  .btn:hover { background: var(--gold-light); color: var(--purple-dark); }
-
-  /* ── How to view ── */
-  .how-to {
-    max-width: 680px;
-    margin: 0 auto 3rem;
-    padding: 0 1.5rem;
-  }
-  .how-to h3 {
-    color: var(--gold);
-    font-size: 1.05rem;
-    margin-bottom: 1rem;
-    text-align: center;
-    letter-spacing: 0.5px;
-    text-transform: uppercase;
-  }
-  .steps {
-    background: rgba(255,255,255,0.05);
-    border: 1px solid rgba(201,162,39,0.3);
-    border-radius: 10px;
-    padding: 1.25rem 1.5rem;
-    display: flex;
-    flex-direction: column;
-    gap: 0.65rem;
-  }
-  .step {
-    display: flex;
-    gap: 0.9rem;
-    align-items: flex-start;
-    font-size: 0.9rem;
-    color: rgba(255,255,255,0.85);
-    line-height: 1.5;
-  }
-  .step-num {
-    background: var(--gold);
-    color: var(--purple-dark);
-    font-weight: bold;
-    font-size: 0.78rem;
-    border-radius: 50%;
-    width: 22px; height: 22px;
-    display: flex; align-items: center; justify-content: center;
-    flex-shrink: 0;
-    margin-top: 1px;
-  }
-
-  /* ── Footer ── */
-  footer {
-    text-align: center;
-    padding: 2rem 1rem;
-    border-top: 1px solid rgba(201,162,39,0.2);
-    font-size: 0.82rem;
-    color: rgba(255,255,255,0.45);
-    line-height: 1.8;
-  }
+  .card-title { font-size: 1.15rem; color: var(--gold); font-weight: bold; line-height: 1.2; }
+  .card-desc { font-size: 0.88rem; color: rgba(255,255,255,0.78); line-height: 1.6; flex: 1; }
+  .card-meta { font-size: 0.8rem; color: var(--gold-light); opacity: 0.8; }
+  .btn { display: inline-block; margin-top: 0.5rem; padding: 0.65rem 1.4rem; background: var(--gold); color: var(--purple-dark); font-size: 0.92rem; font-weight: bold; font-family: inherit; text-decoration: none; border-radius: 6px; text-align: center; transition: background 0.15s; letter-spacing: 0.3px; }
+  .btn:hover { background: var(--gold-light); }
+  .how-to { max-width: 680px; margin: 0 auto 3rem; padding: 0 1.5rem; }
+  .how-to h3 { color: var(--gold); font-size: 1.05rem; margin-bottom: 1rem; text-align: center; letter-spacing: 0.5px; text-transform: uppercase; }
+  .steps { background: rgba(255,255,255,0.05); border: 1px solid rgba(201,162,39,0.3); border-radius: 10px; padding: 1.25rem 1.5rem; display: flex; flex-direction: column; gap: 0.65rem; }
+  .step { display: flex; gap: 0.9rem; align-items: flex-start; font-size: 0.9rem; color: rgba(255,255,255,0.85); line-height: 1.5; }
+  .step-num { background: var(--gold); color: var(--purple-dark); font-weight: bold; font-size: 0.78rem; border-radius: 50%; width: 22px; height: 22px; display: flex; align-items: center; justify-content: center; flex-shrink: 0; margin-top: 1px; }
+  footer { text-align: center; padding: 2rem 1rem; border-top: 1px solid rgba(201,162,39,0.2); font-size: 0.82rem; color: rgba(255,255,255,0.45); line-height: 1.8; }
   footer span { color: var(--gold); opacity: 0.7; }
-
   .bottom-bar { background: var(--gold); height: 8px; width: 100%; }
 </style>
 </head>
 <body>
-
 <div class="top-bar"></div>
-
 <div class="hero">
   <div class="hero-emoji">🎓</div>
   <h1>Lauryn's HBCU Celebration</h1>
@@ -215,72 +47,41 @@
   <div class="school">Prairie View A&amp;M University &nbsp;•&nbsp; Class of 2026</div>
   <div class="date">June 20, 2026</div>
 </div>
-
 <div class="divider"></div>
-
 <p class="intro">
   Thank you for being part of this special night. Download the slideshows below to
   relive the memories — or share them with friends and family who couldn't make it.
   <br/><br/>
   <strong>Files open in Microsoft PowerPoint or Google Slides.</strong>
 </p>
-
 <div class="cards">
-
   <div class="card">
     <div class="card-icon">📸</div>
     <div class="card-title">Photo Station Memories</div>
-    <div class="card-desc">
-      35 posed photos of Lauryn with her guests in front of the PVAMU
-      welcome sign — the perfect keepsake from the photo station.
-    </div>
+    <div class="card-desc">35 posed photos of Lauryn with her guests in front of the PVAMU welcome sign — the perfect keepsake from the photo station.</div>
     <div class="card-meta">35 photos &nbsp;·&nbsp; 12 slides &nbsp;·&nbsp; PowerPoint (.pptx)</div>
-    <!-- 🔗 Replace href with your Google Drive share link -->
-    <a class="btn" href="REPLACE_WITH_PHOTO_STATION_LINK" target="_blank" rel="noopener">
-      ⬇ Download Slideshow
-    </a>
+    <a class="btn" href="https://docs.google.com/presentation/d/1G5QmZFoIme_en1z3lqskrb9ntVOo2NMW/view?usp=sharing" target="_blank" rel="noopener">⬇ Download Slideshow</a>
   </div>
-
   <div class="card">
     <div class="card-icon">🌟</div>
     <div class="card-title">Full Evening Keepsake</div>
-    <div class="card-desc">
-      60 curated photos from the entire celebration — setup, decorations,
-      guests, and late-night memories — organized in four sections.
-    </div>
+    <div class="card-desc">60 curated photos from the entire celebration — setup, decorations, guests, and late-night memories — organized in four sections.</div>
     <div class="card-meta">60 photos &nbsp;·&nbsp; 25 slides &nbsp;·&nbsp; PowerPoint (.pptx)</div>
-    <!-- 🔗 Replace href with your Google Drive share link -->
-    <a class="btn" href="REPLACE_WITH_KEEPSAKE_LINK" target="_blank" rel="noopener">
-      ⬇ Download Slideshow
-    </a>
+    <a class="btn" href="https://docs.google.com/presentation/d/1d4ExdSBzTFP3GwiUgM_W7Dy2XaeOnqKU/view?usp=sharing" target="_blank" rel="noopener">⬇ Download Slideshow</a>
   </div>
-
 </div>
-
 <div class="how-to">
   <h3>How to open on your device</h3>
   <div class="steps">
-    <div class="step">
-      <div class="step-num">1</div>
-      <div>On <strong style="color:var(--gold)">mobile</strong>: tap Download Slideshow — the file will open automatically in Google Slides or your phone's Office app.</div>
-    </div>
-    <div class="step">
-      <div class="step-num">2</div>
-      <div>On <strong style="color:var(--gold)">desktop</strong>: click Download Slideshow, save the file, then open it with Microsoft PowerPoint or upload to Google Slides at <em>slides.google.com</em>.</div>
-    </div>
-    <div class="step">
-      <div class="step-num">3</div>
-      <div>Press <strong style="color:var(--gold)">F5</strong> (or the play button) to start the full-screen slideshow.</div>
-    </div>
+    <div class="step"><div class="step-num">1</div><div>On <strong style="color:var(--gold)">mobile</strong>: tap Download Slideshow — the file will open automatically in Google Slides or your phone's Office app.</div></div>
+    <div class="step"><div class="step-num">2</div><div>On <strong style="color:var(--gold)">desktop</strong>: click Download Slideshow, save the file, then open it with Microsoft PowerPoint or upload to Google Slides at <em>slides.google.com</em>.</div></div>
+    <div class="step"><div class="step-num">3</div><div>Press <strong style="color:var(--gold)">F5</strong> (or the play button) to start the full-screen slideshow.</div></div>
   </div>
 </div>
-
 <footer>
   Made with love for <span>Lauryn</span> &nbsp;🟣💛<br/>
   Prairie View A&amp;M University &nbsp;•&nbsp; Class of 2026
 </footer>
-
 <div class="bottom-bar"></div>
-
 </body>
 </html>
